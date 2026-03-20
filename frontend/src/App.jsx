@@ -1,31 +1,34 @@
-import axios from 'axios';
-import './App.css' 
-import RecipeListPage from './pages/RecipeListPage';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-
-const url = process.env.REACT_APP_API_URL
-
-const apiCall = () => {
-  axios.get(url).then((data) => {
-    console.log(data)
-  })
-}
+import './App.css';
+import HomePage from './pages/HomePage';
+import RecipeListPage from './pages/RecipeListPage';
+import RecipeDetailPage from './pages/RecipeDetailPage';
+import UserProfilePage from './pages/UserProfilePage';
 
 function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/recipes">Recipes</Link>
+      <nav className="navbar">
+        <div className="nav-container">
+          <Link to="/" className="nav-brand">RecipeBook</Link>
+          <ul className="nav-links">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/recipes">Recipes</Link></li>
+            <li><Link to="/profile">Profile</Link></li>
+          </ul>
+        </div>
       </nav>
 
-      <Routes>
-        <Route path="/" element={<h1>Welcome to RecipeBook</h1>} />
-        <Route path="/recipes" element={<RecipeListPage />} />
-      </Routes>
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/recipes" element={<RecipeListPage />} />
+          <Route path="/recipes/:id" element={<RecipeDetailPage />} />
+          <Route path="/profile" element={<UserProfilePage />} />
+        </Routes>
+      </main>
     </BrowserRouter>
   );
 }
-
 
 export default App;
