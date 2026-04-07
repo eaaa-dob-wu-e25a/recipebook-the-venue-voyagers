@@ -4,7 +4,7 @@ import axios from 'axios';
 import RecipeCard from '../components/RecipeCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
 // HomePage component - displays welcome message and featured recipes
 function HomePage() {

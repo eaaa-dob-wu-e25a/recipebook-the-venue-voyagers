@@ -3,7 +3,7 @@ import axios from 'axios';
 import LoadingSpinner from '../components/LoadingSpinner';
 import RecipeCard from '../components/RecipeCard';
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
 // UserProfilePage component - displays user profile with their recipes and reviews
 // For now, hardcoded to user ID 1 (no authentication yet)

@@ -3,7 +3,7 @@ import axios from 'axios';
 import RecipeCard from '../components/RecipeCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
 // RecipeListPage component - displays all recipes in a list
 function RecipeListPage() {

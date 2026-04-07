@@ -4,7 +4,7 @@ import axios from 'axios';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StarRating from '../components/StarRating';
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
 // RecipeDetailPage component - displays detailed information about a single recipe
 function RecipeDetailPage() {
